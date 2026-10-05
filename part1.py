@@ -19,7 +19,7 @@ def main():
         for char in line.strip():
             if char.isdigit():
                 result += char
-        listout = result[0]+result[-1]
+        listout = result[0]*10+result[-1]
         total += int(listout)
         print(listout)
     print(total)
