@@ -24,14 +24,16 @@ def parttwo(line):
     total = 0
     result=[]
     for i in range(len(line)):
+        if line[i].isdigit():
+            result.append(line[i])
         for word, value in replacements.items():
             if line[i:].startswith(word):
-                result.append(value)
+                result.append(int(value))
     if not result:
         return 0
     first_digit_int = result[0]
     last_digit_int = result[-1]
-    return (first_digit_int * 10) + last_digit_int
+    return (int(first_digit_int) * 10) + int(last_digit_int)
 
 def main():
     with open("test.input.txt", "r") as inputval:
@@ -40,7 +42,9 @@ def main():
 part2_answer = 0
 
 for line in content.splitlines():
-    part2_answer += parttwo(line)
+    val = parttwo(line)
+    print(f"Line: {line!r} -> {val}")
+    part2_answer += val
 
 print(part2_answer)
 
