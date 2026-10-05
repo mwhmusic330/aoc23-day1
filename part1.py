@@ -9,19 +9,18 @@ replacements = {
     "eight": "8",
     "nine": "9",
  }
-    for line in content.strip().split("\n"):
-        for char in line.strip():
-            if char.isdigit():
-                result += char
-        listout = result[0]*10+result[-1]
-        total += int(listout)
-        print(listout)
-    print(total)
+###    for line in content.strip().split("\n"):
+  ###      for char in line.strip():
+    ###        if char.isdigit():
+      ###          result += char
+        ###listout = result[0]*10+result[-1]
+        ###total += int(listout)
+        ###print(listout)
+    ###print(total)
+with open("test.input.txt", "r") as inputval:
+    content = inputval.read()
 
-def main(line):
-    with open("test.input.txt", "r") as inputval:
-        content = inputval.read()
-
+def parttwo(line):
     total = 0
     result=[]
     for i in range(len(line)):
@@ -32,6 +31,12 @@ def main(line):
         return 0
     return result[0] * 10 + result[-1]
 
+def main():
+with open("test.input.txt", "r") as inputval:
+    content = inputval.read()
+
+parttwo_answer = parttwo(line) for line in content.splitlines()
+
 
 if __name__ == "__main__":
-    main(line)
+    main()
