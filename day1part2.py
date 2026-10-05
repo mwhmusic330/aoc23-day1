@@ -17,7 +17,7 @@ replacements = {
         ###total += int(listout)
         ###print(listout)
     ###print(total)
-with open("test.input.txt", "r") as inputval:
+with open("input.txt", "r") as inputval:
     content = inputval.read()
 
 def parttwo(line):

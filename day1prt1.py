@@ -8,7 +8,7 @@ replacements = {
     "seven": "7",
     "eight": "8",
     "nine": "9",
- }
+}
 def main():
     with open("test.input.txt", "r") as inputval:
         content = inputval.read()
