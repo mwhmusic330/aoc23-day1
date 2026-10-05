@@ -29,13 +29,20 @@ def parttwo(line):
                 result.append(value)
     if not result:
         return 0
-    return result[0] * 10 + result[-1]
+    first_digit_int = result[0]
+    last_digit_int = result[-1]
+    return (first_digit_int * 10) + last_digit_int
 
 def main():
-with open("test.input.txt", "r") as inputval:
-    content = inputval.read()
+    with open("test.input.txt", "r") as inputval:
+        content = inputval.read()
 
-parttwo_answer = parttwo(line) for line in content.splitlines()
+part2_answer = 0
+
+for line in content.splitlines():
+    part2_answer += parttwo(line)
+
+print(part2_answer)
 
 
 if __name__ == "__main__":
